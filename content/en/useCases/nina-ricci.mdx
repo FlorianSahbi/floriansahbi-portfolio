@@ -1,0 +1,110 @@
+---
+meta:
+  title: "Fixes & Integrations — Nina Ricci"
+  description: "Versatile technical support on Nina Ricci’s headless Next.js × Shopify site: i18n fixes, dynamic size guide, and production hardening."
+  openGraph:
+    title: "Fixes & Integrations — Nina Ricci"
+    description: "Front-end intervention at Nina Ricci: multilingual middleware, dynamic size guide, and UI corrections."
+    url: "https://www.ninaricci.com/"
+    images:
+      - url: "/useCases/nina-ricci.webp"
+        width: 1200
+        height: 630
+        alt: "Fixes & Integrations — Nina Ricci"
+    locale: "en_US"
+    type: "article"
+    siteName: "floriansahbi.dev"
+  twitter:
+    card: "summary_large_image"
+    title: "Fixes & Integrations — Nina Ricci"
+    description: "Front-end work at Nina Ricci: i18n middleware, dynamic size guide, and UI hardening."
+    images:
+      - "/useCases/nina-ricci.webp"
+url: "https://www.ninaricci.com/"
+title: "Fixes & Integrations — Nina Ricci"
+teaser: "Multilingual support & dynamic size guide"
+description: "Nina Ricci e-commerce with multilingual routing, dynamic size guide, and Next.js × Shopify hardening."
+slug: "nina-ricci"
+published: true
+featured: false
+tags: ["Next.js", "Shopify", "E-commerce", "Frontend", "Internationalization", "CMS"]
+coverImage: "/useCases/nina-ricci.webp"
+year: 2024
+client: "Nina Ricci"
+role: "Versatile Technical Support"
+keywords: ["i18n middleware", "dynamic size guide", "Next.js Shopify", "headless ecommerce"]
+---
+
+# Fixes & Integrations — Nina Ricci
+
+[![Nina Ricci site preview](/useCases/nina-ricci.webp)](https://www.ninaricci.com/)
+
+## 🧭 Role & Overall Context at Unlikely Technologies
+
+**Unlikely Technologies – Technical Support Retainer (2022 – 2024)**  
+As technical support lead across seven headless e-commerce sites, I managed client tickets (bugs, fixes, optimizations) via ClickUp, ensuring rapid triage and resolution and full service uptime.
+
+*Project scope:*  
+- **Scope:** Seven custom e-commerce sites  
+- **Mission:** Handle bug fixes, new features, optimizations, calls  
+- **Process:** Weekly prioritization and ongoing resolution  
+- **Impact:** Freed senior engineers for strategic work
+
+## 👩‍💻 Key Contributions
+
+### Product Page Rendering Reliability  
+**Context:** Some product pages failed to render despite correct CMS content  
+**Challenge:** Quickly isolate the issue without downtime  
+**Actions:**  
+1. Inspected Prismic data and locales  
+2. Reproduced the bug in a staging environment to trace back-end → front-end flow  
+3. Analyzed the data serializer and compared with functional specs  
+4. Fixed the front-end mapping and adjusted serialization logic  
+
+**Outcome:** Instant restoration of all product pages, zero regressions, seamless production release.
+
+### Dynamic Size Guide  
+**Context:** No editable size guide component deployable per page  
+**Challenge:** Design a reusable, CMS-driven component that’s easy to update  
+**Actions:**  
+1. Modeled a structured Prismic slice for size guide content  
+2. Built a React component configurable per product type and device  
+3. Integrated a sidebar panel to display the guide on product pages  
+
+**Outcome:** Total contributor autonomy (updates in minutes), consistency across pages, improved UX.
+
+### Native Localization Handling  
+**Context:** Inconsistent redirects to correct language and currency  
+**Challenge:** Implement reliable locale detection (cookie, browser) without extra requests  
+**Actions:**  
+1. Set up a Next.js **middleware** to detect locale from cookie or HTTP header  
+2. Configured redirection rules based on user profile and Shopify settings  
+3. Ran test scenarios for cookies, browser language, and geolocation  
+
+**Outcome:** Users land in the correct language and currency every time, reducing errors and back-and-forth.
+
+## ⚙️ Tech Stack & Tools
+
+- **Next.js** (TypeScript, ISR, SSR, SSG)  
+- **Vercel** (previews & deployments)  
+- **Prismic** (Headless CMS)  
+- **Shopify** (Admin API, Storefront API)  
+- **SCSS**  
+- **ClickUp**, **Figma**, **Algolia**, **Slack**, **Doppler**
+
+## 📈 Performance Metrics
+
+Maintained strong Core Web Vitals (Chrome UX Report, April 2025):  
+- **LCP:** 3 s  
+- **INP:** 88 ms  
+- **CLS:** 0.99  
+- **FCP:** 0.6 s  
+- **TTFB:** 0.2 s
+
+## 🧠 Lessons Learned
+
+> Strengthened my full-stack diagnostic skills, CMS-driven component design, and Next.js middleware expertise.
+
+## 📬 Got a similar project?
+
+[👉 Let’s chat and start collaborating](https://floriansahbi.dev/en/contact)

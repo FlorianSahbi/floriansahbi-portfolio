@@ -1,0 +1,112 @@
+---
+meta:
+  title: "Évolutions produits — La bouche rouge"
+  description: "Support technique ponctuel sur le site headless Next.js × Shopify & Prismic de La bouche rouge : intégration de la gamme parfum et évolution du module de gravure personnalisée."
+  openGraph:
+    title: "Évolutions produits — La bouche rouge"
+    description: "Mission front-end pour La bouche rouge : page produit parfum, panier adapté et saisie de gravure personnalisée."
+    url: "https://laboucherougeparis.com/"
+    images:
+      - url: "/useCases/la-bouche-rouge.webp"
+        width: 1200
+        height: 630
+        alt: "Évolutions produits — La bouche rouge"
+    locale: "fr_FR"
+    type: "article"
+    siteName: "floriansahbi.dev"
+  twitter:
+    card: "summary_large_image"
+    title: "Évolutions produits — La bouche rouge"
+    description: "Mission front-end chez La bouche rouge : intégration de la gamme parfum et gravure personnalisée avec Next.js × Prismic."
+    images:
+      - "/useCases/la-bouche-rouge.webp"
+url: "https://laboucherougeparis.com/"
+title: "Évolutions produits — La bouche rouge"
+teaser: "Nouvelle verticale parfum, gravure premium & navigation modulable"
+description: "E-commerce La bouche rouge avec intégration de la gamme parfum, module de gravure personnalisée et navigation modulable Next.js × Shopify × Prismic."
+slug: "la-bouche-rouge"
+published: true
+featured: false
+tags: ["Next.js", "Shopify", "Prismic", "Headless", "E-commerce", "Frontend", "Personnalisation"]
+coverImage: "/useCases/la-bouche-rouge.webp"
+year: 2024
+client: "La bouche rouge"
+role: "Support technique polyvalent"
+keywords: ["intégration parfum", "gravure personnalisée", "navbar modulaire", "Next.js Shopify Prismic", "e-commerce headless"]
+---
+
+# Évolutions produits — La bouche rouge
+
+[![Aperçu du site La bouche rouge](/useCases/la-bouche-rouge.webp)](https://laboucherougeparis.com/)
+
+## 🧭 Rôle & contexte global chez Unlikely Technologies
+
+**Unlikely Technologies – Support technique retainer (2022 – 2024)**  
+En tant que référent support technique sur sept sites e-commerce (Louise Damas, Nina Ricci, Jean-Paul Gaultier, Withenew…), j’assurais, avec les chefs de projet, la gestion des tickets clients (bugs, correctifs, optimisations) via ClickUp. Ce processus structuré a permis de maintenir un délai de réponse optimal et de libérer les référents techniques, garantissant un service 100 % disponible même en période de forte activité.
+
+*Ce projet s’inscrit dans le cadre suivant :*
+- **Périmètre :** sept sites sur mesure (Louise Damas, Nina Ricci, Jean-Paul Gaultier, Withenew…) ;  
+- **Mission :** prise en charge des tickets clients (bugs, correctifs, nouvelles fonctionnalités, optimisations, appels) ;  
+- **Processus :** réception, priorisation hebdomadaire et traitement continu dans ClickUp ;  
+- **Impact :** libérer les référents techniques pour les rebuilds et maintenir un service 100 % disponible.
+
+## 👩‍💻 Interventions clés
+
+### Service de gravure personnalisée  
+**Contexte :** lancement d’un service supplémentaire de gravure sur les écrins rechargeables avec supplément tarifaire ;  
+**Défi :** cadrer le périmètre fonctionnel, intégrer le module de saisie et synchroniser le prix et les métadonnées sur Shopify ;  
+**Action :**  
+1. Workshops avec le client et le chef de projet pour définir les produits concernés, les icônes, la longueur du texte et le wording ;  
+2. Développement d’un composant React/Next.js pour la saisie de la gravure, activable directement depuis Prismic sur chaque fiche produit ;  
+3. Extension du panier pour afficher l’option de gravure et ajuster dynamiquement le prix ;  
+4. Mise en place de custom metafields Shopify pour refléter la gravure sur les factures et gérer la tarification. 
+
+**Bénéfice / Résultat :** offre de personnalisation fluide, entièrement pilotée via le CMS, avec suivi précis dans Shopify.
+
+### Refonte de la navigation globale  
+**Contexte :** la navbar existante était trop rigide pour gérer la personnalisation d’items, d’icônes et de sous-menus avancés ;  
+**Défi :** livrer une navigation modulable et full-customizable en desktop et mobile, tout en couvrant tous les cas décrits en maquette Figma ;  
+**Action :**  
+1. Refonte du composant navbar : configuration d’items (titre, icône, lien), sous-menus en colonnes, zones d’image au survol, styles éditables (typographie, couleurs) ;  
+2. Adaptation mobile via un drawer responsive reprenant les mêmes possibilités de personnalisation ;  
+3. Tests manuels poussés pour chaque scénario extrême (longueur de texte, absence d’icône, grands menus) ;  
+4. Refactoring du serializer pour garantir la cohérence des données entre Prismic et Next.js.  
+
+**Bénéfice / Résultat :** navbar totalement personnalisable sans intervention dev, cohérente sur tous les devices et facile à faire évoluer.
+
+### Intégration de la gamme parfum  
+**Contexte :** lancement de la verticale “Les Parfums” nécessitant des pages produits, variantes et tunnel d’achat adaptés ;  
+**Défi :** modéliser les parfums dans Shopify et Prismic, et ajuster le front-end et le panier pour gérer offres et échantillons ;  
+**Action :**  
+1. Création des fiches produit Shopify et définition des champs Prismic pour le nouveau catalogue parfum ;  
+2. Développement du template Next.js dédié (sélection de variantes, présentation visuelle, description) ;  
+3. Implémentation de la logique d’échantillons offerts sous conditions (front + backend) ;  
+4. Mise en place d’une landing page marketing dans Prismic pour soutenir le lancement.  
+
+**Bénéfice / Résultat :** déploiement rapide de la gamme parfum, autonomie marketing totale et expérience d’achat enrichie.
+
+## ⚙️ Stack & outils
+
+- **Next.js** (TypeScript, ISR, SSR, SSG)
+- **Vercel** (previews & déploiements)
+- **Prismic** (CMS Headless)
+- **Shopify** (Admin API, Storefront API)
+- **SCSS**
+- **ClickUp**, **Figma**, **Algolia**, **Slack**, **Doppler**
+
+## 📈 Performances
+
+Le site conserve de belles performances (**Chrome UX Report, avril 2025**) :  
+- **LCP :** 2,5 s  
+- **INP :** 122 ms  
+- **CLS :** 0,01  
+- **FCP :** 2,2 s  
+- **TTFB :** 0,4 s  
+
+## 🧠 Ce que j’en retiens
+
+> Renforcement de mes compétences en personnalisation produit headless, conception de composants modulaires et intégration full-stack Next.js × Shopify.
+
+## 📬 Vous avez un projet similaire ?
+
+[👉 Me contacter pour démarrer une collaboration](https://floriansahbi.dev/fr/contact)

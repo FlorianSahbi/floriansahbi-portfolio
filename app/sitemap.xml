@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home -->
+  <url>
+    <loc>https://floriansahbi.dev/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://floriansahbi.dev/fr/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/about" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://floriansahbi.dev/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/contact" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <!-- Projects -->
+
+  <url>
+    <loc>https://floriansahbi.dev/fr/projects/by-charlot</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/projects/by-charlot" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/projects/by-charlot" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/projects/by-charlot" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://floriansahbi.dev/fr/projects/la-bouche-rouge</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/projects/la-bouche-rouge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/projects/la-bouche-rouge" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/projects/la-bouche-rouge" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://floriansahbi.dev/fr/projects/louise-damas</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/projects/louise-damas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/projects/louise-damas" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/projects/louise-damas" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://floriansahbi.dev/fr/projects/nina-ricci</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/projects/nina-ricci" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/projects/nina-ricci" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/projects/nina-ricci" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://floriansahbi.dev/fr/projects/ule</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/projects/ule" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/projects/ule" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/projects/ule" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://floriansahbi.dev/fr/projects/yse</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://floriansahbi.dev/fr/projects/yse" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://floriansahbi.dev/en/projects/yse" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://floriansahbi.dev/fr/projects/yse" />
+    <lastmod>2025-04-27T22:30:00.000Z</lastmod>
+  </url>
+</urlset>

@@ -1,0 +1,110 @@
+---
+meta:
+  title: "Correctifs & intégrations — Nina Ricci"
+  description: "Support technique polyvalent sur le site headless Next.js × Shopify de Nina Ricci : corrections i18n, guide des tailles dynamique et fiabilisation de la production."
+  openGraph:
+    title: "Correctifs & intégrations — Nina Ricci"
+    description: "Intervention front-end chez Nina Ricci : localisation multilingue, guide des tailles dynamique et corrections UI."
+    url: "https://www.ninaricci.com/"
+    images:
+      - url: "/useCases/nina-ricci.webp"
+        width: 1200
+        height: 630
+        alt: "Correctifs & intégrations — Nina Ricci"
+    locale: "fr_FR"
+    type: "article"
+    siteName: "floriansahbi.dev"
+  twitter:
+    card: "summary_large_image"
+    title: "Correctifs & intégrations — Nina Ricci"
+    description: "Intervention front-end chez Nina Ricci : middleware i18n, guide des tailles dynamique et corrections UI."
+    images:
+      - "/useCases/nina-ricci.webp"
+url: "https://www.ninaricci.com/"
+title: "Correctifs & intégrations — Nina Ricci"
+teaser: "Localisation multilingue & guide des tailles dynamique"
+description: "E-commerce Nina Ricci avec localisation multilingue, guide des tailles dynamique et fiabilité Next.js × Shopify."
+slug: "nina-ricci"
+published: true
+featured: false
+tags: ["Next.js", "Shopify", "E-commerce", "Frontend", "Internationalisation", "CMS"]
+coverImage: "/useCases/nina-ricci.webp"
+year: 2024
+client: "Nina Ricci"
+role: "Support technique polyvalent"
+keywords: ["i18n middleware", "guide des tailles dynamique", "Next.js Shopify", "e-commerce headless"]
+---
+
+# Correctifs & intégrations — Nina Ricci
+
+[![Aperçu du site Nina Ricci](/useCases/nina-ricci.webp)](https://www.ninaricci.com/)
+
+## 🧭 Rôle & contexte global chez Unlikely Technologies
+
+**Unlikely Technologies – Support technique retainer (2022 – 2024)**  
+En tant que référent support technique sur sept sites e-commerce (Louise Damas, Nina Ricci, Jean-Paul Gaultier, Withenew…), j’assurais, avec les chefs de projet, la gestion des tickets clients (bugs, correctifs, optimisations) via ClickUp. Ce processus structuré a permis de maintenir un délai de réponse optimal et de libérer les référents techniques, garantissant un service 100 % disponible même en période de forte activité.
+
+*Ce projet s’inscrit dans le cadre suivant :*
+- **Périmètre :** sept sites sur mesure (Louise Damas, Nina Ricci, Jean-Paul Gaultier, Withenew…) ;  
+- **Mission :** prise en charge des tickets clients (bugs, correctifs, nouvelles fonctionnalités, optimisations, appels) ;  
+- **Processus :** réception, priorisation hebdomadaire et traitement continu dans ClickUp ;  
+- **Impact :** libérer les référents techniques pour les rebuilds et maintenir un service 100 % disponible.
+
+## 👩‍💻 Interventions clés
+
+### Fiabilisation de l’affichage des fiches produit  
+**Contexte :** certaines fiches produit n’apparaissaient pas malgré une contribution correcte dans le CMS ;  
+**Défi :** identifier la source du problème rapidement et sans interruption de service ;  
+**Action :**  
+1. Vérification du contenu dans Prismic (données et localisation) ;  
+2. Reproduction de l’erreur en environnement de test pour isoler la chaîne back → front ;  
+3. Analyse du sérialiseur de données et comparaison avec des cas fonctionnels ;  
+4. Correction du mapping front-end et ajustement du code de sérialisation.  
+
+**Bénéfice / Résultat :** rétablissement immédiat de l’affichage, sans régression, et mise en production sans coupure.
+
+### Guide des tailles dynamique  
+**Contexte :** absence d’un guide des tailles éditable par l’équipe de la marque et déployable page par page ;  
+**Défi :** concevoir un composant CMS-driven, réutilisable et simple à mettre à jour ;  
+**Action :**  
+1. Modélisation d’un bloc Prismic structuré ;  
+2. Développement d’un composant React paramétrable selon le type de produit et les maquettes mobile/desktop ;  
+3. Intégration d’un panneau latéral destiné à afficher le composant.  
+
+**Bénéfice / Résultat :** autonomie totale des contributeurs (mise à jour en quelques minutes), uniformité sur toutes les pages produit et meilleure expérience utilisateur.
+
+### Gestion native de la localisation  
+**Contexte :** redirections incohérentes vers la bonne langue et la bonne devise ;  
+**Défi :** implémenter une solution fiable basée sur les préférences (cookie, navigateur) et la géolocalisation, sans surcharge de requêtes ;  
+**Action :**  
+1. Configuration d’un **middleware Next.js** pour détecter la locale (cookie, en-tête HTTP) ;  
+2. Mise en place de règles de redirection adaptées au profil utilisateur et à la configuration Shopify ;  
+3. Scénarios de test pour tous les cas (cookie, langue du navigateur, géolocalisation).  
+
+**Bénéfice / Résultat :** l’utilisateur arrive systématiquement dans la bonne langue et la bonne devise, réduisant les erreurs et les allers-retours.
+
+## ⚙️ Stack & outils
+
+- **Next.js** (TypeScript, ISR, SSR, SSG)
+- **Vercel** (previews & déploiements)
+- **Prismic** (CMS Headless)
+- **Shopify** (Admin API, Storefront API)
+- **SCSS**
+- **ClickUp**, **Figma**, **Algolia**, **Slack**, **Doppler**
+
+## 📈 Performances
+
+Le site conserve de belles performances (**Chrome UX Report, avril 2025**) :  
+- **LCP :** 3 s  
+- **INP :** 88 ms  
+- **CLS :** 0,99  
+- **FCP :** 0,6 s  
+- **TTFB :** 0,2 s  
+
+## 🧠 Ce que j’en retiens
+
+> Ce projet m’a permis de renforcer mes compétences en diagnostic full-stack, en conception de composants CMS-driven et en middleware Next.js. J’ai garanti une production stable et une expérience utilisateur optimisée, tout en respectant les contraintes de délai et de disponibilité.
+
+## 📬 Vous avez un projet similaire ?
+
+[👉 Me contacter pour démarrer une collaboration](https://floriansahbi.dev/fr/contact)

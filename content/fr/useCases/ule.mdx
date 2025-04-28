@@ -1,0 +1,112 @@
+---
+meta:
+  title: "Support & optimisations — Ulé Beauty"
+  description: "Support technique ponctuel sur le site headless Next.js × Shopify de Ulé Beauty : intégration de Bambuser, Provenance et ouverture du marché allemand avec optimisation des performances."
+  openGraph:
+    title: "Support & optimisations — Ulé Beauty"
+    description: "Mission front-end : optimisation des performances, intégration   Bambuser & Provenance et lancement du marché allemand pour Ulé Beauty."
+    url: "https://www.ulebeauty.com/"
+    images:
+      - url: "/useCases/ule-beauty.webp"
+        width: 1200
+        height: 630
+        alt: "Support & optimisations — Ulé Beauty"
+    locale: "fr_FR"
+    type: "article"
+    siteName: "floriansahbi.dev"
+  twitter:
+    card: "summary_large_image"
+    title: "Support & optimisations — Ulé Beauty"
+    description: "Optimisation des Core Web Vitals, intégration de Bambuser & Provenance et lancement du marché allemand pour Ulé Beauty."
+    images:
+      - "/useCases/ule-beauty.webp"
+url: "https://www.ulebeauty.com/"
+title: "Support & optimisations — Ulé Beauty"
+teaser: "Optimisation perf & ouverture du marché allemand"
+description: "E-commerce Ulé Beauty sur Next.js × Shopify avec optimisations Core Web Vitals, intégration de Bambuser & Provenance et ouverture du marché allemand."
+slug: "ule-beauty"
+published: true
+featured: true
+tags: ["Next.js", "Shopify", "Headless", "E-commerce", "Frontend", "Internationalisation", "Performance"]
+coverImage: "/useCases/ule-beauty.webp"
+year: 2024
+client: "Ulé Beauty"
+role: "Support technique polyvalent"
+keywords: ["optimisation Core Web Vitals", "Next.js Shopify headless", "internationalisation", "Bambuser", "Provenance"]
+---
+
+# Support & optimisations — Ulé Beauty
+
+[![Aperçu du site Ulé Beauty](/useCases/ule-beauty.webp)](https://www.ulebeauty.com/)
+
+## 🧭 Rôle & contexte global chez Unlikely Technologies
+
+**Unlikely Technologies – Support technique retainer (2022 – 2024)**  
+En tant que référent support technique sur sept sites e-commerce (Louise Damas, Nina Ricci, Jean-Paul Gaultier, Withenew…), j’assurais, avec les chefs de projet, la gestion des tickets clients (bugs, correctifs, optimisations) via ClickUp. Ce processus structuré a permis de maintenir un délai de réponse optimal et de libérer les référents techniques, garantissant un service 100 % disponible même en période de forte activité.
+
+*Ce projet s’inscrit dans le cadre suivant :*
+- **Périmètre :** sept sites sur mesure (Louise Damas, Nina Ricci, Jean-Paul Gaultier, Withenew…) ;  
+- **Mission :** prise en charge des tickets clients (bugs, correctifs, nouvelles fonctionnalités, optimisations, appels) ;  
+- **Processus :** réception, priorisation hebdomadaire et traitement continu dans ClickUp ;  
+- **Impact :** libérer les référents techniques pour les rebuilds et maintenir un service 100 % disponible.
+
+## 👩‍💻 Interventions clés
+
+### Intégration du service Bambuser  
+**Contexte :** le client souhaitait proposer du live shopping directement sur ses pages produit ;  
+**Défi :** comprendre la plateforme Bambuser, l’adapter à une architecture headless Next.js & Storyblok et préserver la performance des pages ;  
+**Action :**  
+1. Analyse de la documentation Bambuser et ateliers avec le client pour définir les cas d’usage ;  
+2. Développement d’un composant CMS-driven (Storyblok) pour insérer un bouton d’accès au live et un bloc éditorial de previews vidéo ;  
+3. Chargement asynchrone du script via dynamic import et stratégie `beforeInteractive` de Next.js ;  
+4. Mise en place d’options configurables (icônes, labels, longueurs de texte) directement depuis le back-office.  
+
+**Bénéfice / Résultat :** nouveau service tiers activable sans code, autonomie marketing et intégration sans impact négatif sur le rendu initial.
+
+### Audit & optimisation Core Web Vitals  
+**Contexte :** le monitoring Google a signalé des performances insuffisantes sur différentes pages, les considérant comme lentes et susceptibles d’impacter l’expérience utilisateur ;  
+**Défi :** isoler rapidement les scripts et composants responsables sans perturber les fonctionnalités existantes ;  
+**Action :**  
+1. Audit Lighthouse ciblé sur les pages critiques ;  
+2. Retrait progressif puis réintégration contrôlée des éléments pour isoler les goulots d’étranglement ;  
+3. Déférrement des scripts non essentiels et lazy-loading des images hors-fold ;  
+4. Monitoring continu via Vercel Analytics pour valider l’impact en production.  
+
+**Bénéfice / Résultat :** suppression des alertes et meilleure fluidité utilisateur.
+
+### Lancement du marché allemand  
+**Contexte :** expansion vers la clientèle germanophone avec gestion multilingue et devise € ;  
+**Défi :** activer la locale allemande sur Shopify, adapter Next.js & Storyblok et s’assurer que tous les services tiers (Bambuser, Provenance…) se combinent correctement ;  
+**Action :**  
+1. Configuration de la locale allemande dans Shopify et réglage de l’i18n dans Next.js ;  
+2. Mise à jour des serializers Storyblok et adaptation des composants (nav, cards, forms) à la nouvelle langue ;  
+3. Vérification de la compatibilité de chaque service tiers avec la locale allemande ;  
+4. Tests fonctionnels UX et déploiement progressif pour éviter toute interruption.  
+
+**Bénéfice / Résultat :** marché allemand opérationnel, catalogue traduit et paiement en euros, ouverture réussie sans incident.
+
+## ⚙️ Stack & outils
+
+- **Next.js** (TypeScript, ISR, SSR, SSG)
+- **Vercel** (previews & déploiements)
+- **Prismic** (CMS Headless)
+- **Shopify** (Admin API, Storefront API)
+- **SCSS**
+- **ClickUp**, **Figma**, **Algolia**, **Slack**, **Doppler**
+
+## 📈 Performances
+
+Le site conserve de belles performances (**Chrome UX Report, avril 2025**) :  
+- **LCP :** 0,8 s  
+- **INP :** 92 ms  
+- **CLS :** 0  
+- **FCP :** 0,8 s  
+- **TTFB :** 0,2 s  
+
+## 🧠 Ce que j’en retiens
+
+> Mission riche combinant intégration de services tiers, optimisation web et internationalisation, tout en maintenant un haut niveau de performance.
+
+## 📬 Vous avez un projet similaire ?
+
+[👉 Me contacter pour démarrer une collaboration](https://floriansahbi.dev/fr/contact)
