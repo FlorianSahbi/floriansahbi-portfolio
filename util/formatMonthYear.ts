@@ -10,12 +10,12 @@
  */
 export function formatMonthYear(
   date: string | number | Date,
-  locale?: string
+  locale?: string,
 ): string {
-  const d = date instanceof Date ? date : new Date(date);
+  const d = date instanceof Date ? date : new Date(date)
   return new Intl.DateTimeFormat(locale, {
-    month: "long",
-    year: "numeric",
-    timeZone: "Europe/Paris",
-  }).format(d);
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Europe/Paris',
+  }).format(d)
 }

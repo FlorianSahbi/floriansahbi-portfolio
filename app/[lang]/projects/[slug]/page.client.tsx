@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { Mdx } from "@/app/[lang]/components/mdx"
-import "./mdx.css"
-import type { EnhancedItem, USE_CASES } from "@/lib/content/service"
-import Header from "../components/header"
-import Navigation from "../../components/navigation"
+import Link from 'next/link'
+import { Mdx } from '@/app/[lang]/components/mdx'
+import './mdx.css'
+import type { EnhancedItem, USE_CASES } from '@/lib/content/service'
+import Header from '../components/header'
+import Navigation from '../../components/navigation'
 
 type ProjectClientPageProps = EnhancedItem<typeof USE_CASES> & {
   lang: string
@@ -27,8 +27,7 @@ export default function ProjectClientPage({
   nextTitle,
 }: ProjectClientPageProps) {
   return (
-    <div className="bg-zinc-50 min-h-screen">
-
+    <div className="min-h-screen bg-zinc-50">
       <div className="relative z-20">
         <Header title={title} description={description} />
         <Navigation data={navigation} withObserver />
@@ -36,59 +35,25 @@ export default function ProjectClientPage({
 
       <Link
         href={`/${lang}/projects/${prevSlug}`}
-        className="
-          hidden lg:block
-          md:w-1/5  
-          group
-          fixed inset-y-0 left-0 w-1/5
-          z-10
-          opacity-0 hover:opacity-60
-          transition-opacity duration-300
-        "
+        className="group fixed inset-y-0 left-0 z-10 hidden w-1/5 opacity-0 transition-opacity duration-300 hover:opacity-60 md:w-1/5 lg:block"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent pointer-events-none" />
-        <span
-          className="
-            absolute top-1/2 left-4
-            -translate-y-1/2 -translate-x-full
-            text-white font-medium
-            whitespace-nowrap
-            transition-transform duration-300
-            group-hover:translate-x-0
-          "
-        >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
+        <span className="absolute left-4 top-1/2 -translate-x-full -translate-y-1/2 whitespace-nowrap font-medium text-white transition-transform duration-300 group-hover:translate-x-0">
           {prevTitle}
         </span>
       </Link>
 
       <Link
         href={`/${lang}/projects/${nextSlug}`}
-        className="
-          hidden lg:block
-          md:w-1/5 
-          group
-          fixed inset-y-0 right-0 w-1/5
-          z-10
-          opacity-0 hover:opacity-60
-          transition-opacity duration-300
-        "
+        className="group fixed inset-y-0 right-0 z-10 hidden w-1/5 opacity-0 transition-opacity duration-300 hover:opacity-60 md:w-1/5 lg:block"
       >
-        <div className="absolute inset-0 bg-gradient-to-l from-black/70 to-transparent pointer-events-none" />
-        <span
-          className="
-            absolute top-1/2 right-4
-            -translate-y-1/2 translate-x-full
-            text-white font-medium
-            whitespace-nowrap
-            transition-transform duration-300
-            group-hover:translate-x-0
-          "
-        >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-black/70 to-transparent" />
+        <span className="absolute right-4 top-1/2 -translate-y-1/2 translate-x-full whitespace-nowrap font-medium text-white transition-transform duration-300 group-hover:translate-x-0">
           {nextTitle}
         </span>
       </Link>
 
-      <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless relative z-10">
+      <article className="prose prose-zinc prose-quoteless relative z-10 mx-auto px-4 py-12">
         <Mdx code={body.code} />
       </article>
     </div>

@@ -1,6 +1,6 @@
-import { defineNestedType, defineDocumentType } from "contentlayer/source-files"
-import { computedFields } from "../computedFields"
-import { Meta } from "./meta"
+import { defineNestedType, defineDocumentType } from 'contentlayer/source-files'
+import { computedFields } from '../computedFields'
+import { Meta } from './meta'
 
 const Work = defineNestedType(() => ({
   name: 'Work',
@@ -56,7 +56,7 @@ const HobbiesSection = defineNestedType(() => ({
 
 export const About = defineDocumentType(() => ({
   name: 'About',
-  filePathPattern: "./**/about.mdx",
+  filePathPattern: './**/about.mdx',
   contentType: 'mdx',
   fields: {
     meta: { type: 'nested', of: Meta, required: true },

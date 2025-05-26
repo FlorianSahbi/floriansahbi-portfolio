@@ -1,14 +1,14 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import clsx from "clsx";
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import clsx from 'clsx'
 
 interface BigCtaProps {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
+  href: string
+  className?: string
+  children: React.ReactNode
   prefetch?: boolean
-  color?: "primary" | "secondary" | "outline" | "ghost";
-  variant?: "default" | "condensed";
+  color?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  variant?: 'default' | 'condensed'
 }
 
 export default function BigCta({
@@ -16,35 +16,35 @@ export default function BigCta({
   className,
   children,
   prefetch = false,
-  color = "primary",
-  variant = "default",
+  color = 'primary',
+  variant = 'default',
 }: BigCtaProps) {
   const baseStyle =
-    "group inline-flex items-center rounded-full overflow-hidden shadow-lg border transition-colors duration-300";
+    'group inline-flex items-center rounded-full overflow-hidden shadow-lg border transition-colors duration-300'
 
   const colorVariants = {
     primary: {
-      border: "border-emerald-900",
-      background: "bg-green-900 hover:bg-emerald-900/30",
+      border: 'border-emerald-900',
+      background: 'bg-green-900 hover:bg-emerald-900/30',
     },
     secondary: {
-      border: "border-blue-800",
-      background: "bg-blue-900 hover:bg-blue-800/30",
+      border: 'border-blue-800',
+      background: 'bg-blue-900 hover:bg-blue-800/30',
     },
     outline: {
-      border: "border-gray-500",
-      background: "bg-transparent hover:bg-gray-300/20",
+      border: 'border-gray-500',
+      background: 'bg-transparent hover:bg-gray-300/20',
     },
     ghost: {
-      border: "border-white/10",
-      background: "bg-transparent hover:bg-white/5",
+      border: 'border-white/10',
+      background: 'bg-transparent hover:bg-white/5',
     },
-  };
+  }
 
   const variantStyles = {
-    default: "px-4 py-2 text-base",
-    condensed: "px-3 py-1 text-sm",
-  };
+    default: 'px-4 py-2 text-base',
+    condensed: 'px-3 py-1 text-sm',
+  }
 
   return (
     <Link
@@ -55,17 +55,17 @@ export default function BigCta({
     >
       <span
         className={clsx(
-          "inline-flex items-center gap-2 text-white transition-colors duration-300",
+          'inline-flex items-center gap-2 text-white transition-colors duration-300',
           colorVariants[color].background,
-          variantStyles[variant]
+          variantStyles[variant],
         )}
       >
         {children}
         <ArrowRight
           size={14}
-          className="text-white group-hover:translate-x-1 transition-transform duration-300"
+          className="text-white transition-transform duration-300 group-hover:translate-x-1"
         />
       </span>
     </Link>
-  );
+  )
 }

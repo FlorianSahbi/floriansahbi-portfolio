@@ -16,15 +16,7 @@ import { removeInternals, Clean } from './clean'
 import { getFromCache, setToCache } from './cache'
 
 export type { Locale, ContentType }
-export {
-  PROJECT,
-  PROJECTS,
-  USE_CASES,
-  ABOUT,
-  HOME,
-  GLOBALS,
-  CONTACT,
-}
+export { PROJECT, PROJECTS, USE_CASES, ABOUT, HOME, GLOBALS, CONTACT }
 
 /**
  * A single navigation entry, cleaned and with an href
@@ -48,7 +40,7 @@ export type EnhancedItem<T extends ContentType> = Clean<
  */
 export function getAllContent<T extends ContentType>(
   locale: Locale,
-  type: T
+  type: T,
 ): EnhancedItem<T>[] {
   const key = `${locale}:${type}`
   const cached = getFromCache<EnhancedItem<T>>(key)
@@ -69,9 +61,7 @@ export function getAllContent<T extends ContentType>(
     .map((item) => {
       const cleanItem = removeInternals(item) as Clean<typeof item>
       const cleanedMeta =
-        'meta' in item && item.meta
-          ? removeInternals(item.meta)
-          : undefined
+        'meta' in item && item.meta ? removeInternals(item.meta) : undefined
 
       return {
         ...cleanItem,
@@ -91,7 +81,7 @@ export function getAllContent<T extends ContentType>(
 export function getContentBySlug<T extends ContentType>(
   locale: Locale,
   type: T,
-  slug?: string
+  slug?: string,
 ): EnhancedItem<T> | undefined {
   const all = getAllContent(locale, type)
   return all.find((i) => i.slug === (slug ?? type))
@@ -101,7 +91,7 @@ export function getContentBySlug<T extends ContentType>(
  * Generate static params for Next.js App Router
  */
 export function getStaticParams(
-  type: ContentType
+  type: ContentType,
 ): Array<{ lang: Locale; slug: string }> {
   return (contentMap[type] || [])
     .filter((i) => Boolean(i.slug))

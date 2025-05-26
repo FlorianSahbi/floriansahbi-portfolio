@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import React, { useRef, useEffect } from "react"
-import { useMousePosition } from "@/util/mouse"
+import React, { useRef, useEffect } from 'react'
+import { useMousePosition } from '@/util/mouse'
 
 interface ParticlesProps {
   className?: string
@@ -25,7 +25,7 @@ type Circle = {
 }
 
 export default function Particles({
-  className = "",
+  className = '',
   quantity = 30,
   staticity = 50,
   ease = 50,
@@ -38,17 +38,17 @@ export default function Particles({
   const mousePosition = useMousePosition()
   const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const sizeRef = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
-  const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
+  const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (canvas) {
-      contextRef.current = canvas.getContext("2d")
+      contextRef.current = canvas.getContext('2d')
     }
     initCanvas()
     animate()
-    window.addEventListener("resize", initCanvas)
-    return () => window.removeEventListener("resize", initCanvas)
+    window.addEventListener('resize', initCanvas)
+    return () => window.removeEventListener('resize', initCanvas)
   }, [])
 
   useEffect(() => {
@@ -143,7 +143,7 @@ export default function Particles({
     start1: number,
     end1: number,
     start2: number,
-    end2: number
+    end2: number,
   ): number {
     return ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
   }
@@ -169,10 +169,12 @@ export default function Particles({
       circle.x += circle.dx
       circle.y += circle.dy
       circle.translateX +=
-        (mouseRef.current.x / (staticity / circle.magnetism) - circle.translateX) /
+        (mouseRef.current.x / (staticity / circle.magnetism) -
+          circle.translateX) /
         ease
       circle.translateY +=
-        (mouseRef.current.y / (staticity / circle.magnetism) - circle.translateY) /
+        (mouseRef.current.y / (staticity / circle.magnetism) -
+          circle.translateY) /
         ease
 
       if (

@@ -1,4 +1,4 @@
-import { defineNestedType } from "contentlayer/source-files"
+import { defineNestedType } from 'contentlayer/source-files'
 
 export const Navigation = defineNestedType(() => ({
   name: 'Navigation',
@@ -6,4 +6,4 @@ export const Navigation = defineNestedType(() => ({
     label: { type: 'string', required: true },
     href: { type: 'string', required: true },
   },
-}));
+}))

@@ -1,11 +1,11 @@
-import type { ComponentType, PropsWithChildren } from 'react';
+import type { ComponentType, PropsWithChildren } from 'react'
 
 export function useMDXComponents(
-  components: Record<string, ComponentType<any>>
+  components: Record<string, ComponentType<any>>,
 ): Record<string, ComponentType<any>> {
   return {
     h1: (({ children }: PropsWithChildren<{}>) => (
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-zinc-100 md:text-center sm:text-4xl">
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl md:text-center">
         {children}
       </h1>
     )) as ComponentType<any>,
@@ -15,5 +15,5 @@ export function useMDXComponents(
     )) as ComponentType<any>,
 
     ...components,
-  };
+  }
 }

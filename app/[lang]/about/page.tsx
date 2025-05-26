@@ -1,77 +1,77 @@
-import { Metadata } from "next";
-import AboutClientPage from "./page.client";
+import { Metadata } from 'next'
+import AboutClientPage from './page.client'
 import {
   ABOUT,
   getContentBySlug,
   getStaticParams,
   Locale,
   EnhancedItem,
-} from "@/lib/content/service";
-import { notFound } from "next/navigation";
-import { Person, WithContext } from "schema-dts";
+} from '@/lib/content/service'
+import { notFound } from 'next/navigation'
+import { Person, WithContext } from 'schema-dts'
 
 function generateJsonLd(lang: Locale): WithContext<Person> {
-  const isFr = lang === "fr";
+  const isFr = lang === 'fr'
 
   return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Florian Sahbi",
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Florian Sahbi',
     url: `https://floriansahbi.dev/${lang}/about`,
-    image: "https://floriansahbi.dev/about.jpeg",
+    image: 'https://floriansahbi.dev/about.jpeg',
     jobTitle: isFr
-      ? "Conception & développement Fullstack JavaScript – Florian Sahbi"
-      : "Remote JavaScript / Next.js Developer",
+      ? 'Conception & développement Fullstack JavaScript – Florian Sahbi'
+      : 'Remote JavaScript / Next.js Developer',
     worksFor: {
-      "@type": "Organization",
-      name: "floriansahbi.dev",
+      '@type': 'Organization',
+      name: 'floriansahbi.dev',
     },
     address: {
-      "@type": "PostalAddress",
-      addressLocality: "Normandie",
-      addressCountry: "FR",
+      '@type': 'PostalAddress',
+      addressLocality: 'Normandie',
+      addressCountry: 'FR',
     },
     sameAs: [
       `https://floriansahbi.dev/${lang}/about`,
       `https://floriansahbi.com/${lang}/about`,
-      "https://www.linkedin.com/in/floriansahbi/",
-      "https://github.com/FlorianSahbi",
+      'https://www.linkedin.com/in/floriansahbi/',
+      'https://github.com/FlorianSahbi',
     ],
-  };
+  }
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: Locale }>
 }): Promise<Metadata> {
-  const { lang } = await params;
-  const content = (await getContentBySlug(lang, ABOUT)) as EnhancedItem<
-    typeof ABOUT
-  > | undefined;
-  return (content?.meta ?? {}) as Metadata;
+  const { lang } = await params
+  const content = (await getContentBySlug(lang, ABOUT)) as
+    | EnhancedItem<typeof ABOUT>
+    | undefined
+  return (content?.meta ?? {}) as Metadata
 }
 
 export async function generateStaticParams() {
-  return getStaticParams(ABOUT);
+  return getStaticParams(ABOUT)
 }
 
 export default async function AboutPage({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: Locale }>
 }) {
-  const { lang } = await params;
+  const { lang } = await params
 
-  const data = (await getContentBySlug(lang, ABOUT)) as EnhancedItem<
-    typeof ABOUT
-  > | undefined;
+  const data = (await getContentBySlug(lang, ABOUT)) as
+    | EnhancedItem<typeof ABOUT>
+    | undefined
 
   if (!data) {
-    notFound();
+    notFound()
   }
 
-  const jsonLd = generateJsonLd(lang);
+  const jsonLd = generateJsonLd(lang)
 
   return (
     <>
@@ -81,5 +81,5 @@ export default async function AboutPage({
       />
       <AboutClientPage {...data} />
     </>
-  );
+  )
 }

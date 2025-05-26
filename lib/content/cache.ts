@@ -3,7 +3,7 @@
  *
  * Keyed by a string (e.g., "en:projects"), values are stored as unknown[].
  */
-const cache = new Map<string, unknown[]>();
+const cache = new Map<string, unknown[]>()
 
 /**
  * Retrieves cached data for the given key.
@@ -13,7 +13,7 @@ const cache = new Map<string, unknown[]>();
  * @returns The cached array cast to T[], or undefined if not found.
  */
 export function getFromCache<T>(key: string): T[] | undefined {
-  return cache.get(key) as T[] | undefined;
+  return cache.get(key) as T[] | undefined
 }
 
 /**
@@ -24,5 +24,5 @@ export function getFromCache<T>(key: string): T[] | undefined {
  * @typeParam T - The element type of the data array.
  */
 export function setToCache<T>(key: string, data: T[]): void {
-  cache.set(key, data);
+  cache.set(key, data)
 }

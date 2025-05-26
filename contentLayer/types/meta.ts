@@ -1,4 +1,4 @@
-import { defineNestedType } from "contentlayer/source-files"
+import { defineNestedType } from 'contentlayer/source-files'
 
 const OgImage = defineNestedType(() => ({
   name: 'OgImage',
@@ -8,7 +8,7 @@ const OgImage = defineNestedType(() => ({
     height: { type: 'number', required: false },
     alt: { type: 'string', required: false },
   },
-}));
+}))
 
 const OpenGraph = defineNestedType(() => ({
   name: 'OpenGraph',
@@ -21,7 +21,7 @@ const OpenGraph = defineNestedType(() => ({
     type: { type: 'string', required: false },
     siteName: { type: 'string', required: false },
   },
-}));
+}))
 
 const TwitterMeta = defineNestedType(() => ({
   name: 'TwitterMeta',
@@ -31,7 +31,7 @@ const TwitterMeta = defineNestedType(() => ({
     description: { type: 'string', required: false },
     images: { type: 'list', of: { type: 'string' }, required: false },
   },
-}));
+}))
 
 export const Meta = defineNestedType(() => ({
   name: 'Meta',
@@ -41,4 +41,4 @@ export const Meta = defineNestedType(() => ({
     openGraph: { type: 'nested', of: OpenGraph, required: false },
     twitter: { type: 'nested', of: TwitterMeta, required: false },
   },
-}));
+}))

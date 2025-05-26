@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import type { ReactNode, MouseEvent } from 'react'
 import { motion, useMotionTemplate, useSpring } from 'framer-motion'
@@ -25,14 +25,14 @@ export default function Card({ active, children }: CardProps) {
   return (
     <div
       onMouseMove={onMouseMove}
-      className={`overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 ${
+      className={`group relative overflow-hidden rounded-xl border duration-700 hover:bg-zinc-800/10 md:gap-8 ${
         active ? 'hover:border-emerald-600/50' : 'hover:border-zinc-400/50'
       } ${active ? 'border-emerald-800' : 'border-zinc-600'}`}
     >
       <div className="pointer-events-none">
         <div className="absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
         <motion.div
-          className="absolute inset-0 z-10 bg-gradient-to-br opacity-100 via-zinc-100/10 transition duration-1000 group-hover:opacity-50"
+          className="absolute inset-0 z-10 bg-gradient-to-br via-zinc-100/10 opacity-100 transition duration-1000 group-hover:opacity-50"
           style={style}
         />
 
