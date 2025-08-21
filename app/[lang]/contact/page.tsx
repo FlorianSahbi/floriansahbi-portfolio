@@ -8,6 +8,7 @@ import {
 } from '@/lib/content/service'
 import ContactClientPage from './page.client'
 import { WithContext, ContactPage as ContactPageLD } from 'schema-dts'
+import { buildAlternates, absoluteUrl } from '@/lib/seo/alternates'
 
 function generateJsonLd(lang: Locale): WithContext<ContactPageLD> {
   const isFr = lang === 'fr'
@@ -36,14 +37,27 @@ export function generateStaticParams(): Array<{ lang: Locale }> {
   return getStaticParams(CONTACT)
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: { lang: Locale }
-}): Metadata {
+}): Promise<Metadata> {
   const { lang } = params
   const content = getContentBySlug(lang, CONTACT)
-  return (content?.meta ?? {}) as Metadata
+  if (!content?.meta) return {}
+
+  const pathname = `/${lang}/contact`
+  const base = 'https://floriansahbi.dev'
+
+  return {
+    ...(content.meta as Metadata),
+    metadataBase: new URL(base),
+    alternates: buildAlternates(lang, pathname),
+    openGraph: {
+      ...(content.meta.openGraph ?? {}),
+      url: absoluteUrl(pathname),
+    },
+  }
 }
 
 export default function ContactPage({ params }: { params: { lang: Locale } }) {

@@ -9,6 +9,7 @@ import {
 } from '@/lib/content/service'
 import { notFound } from 'next/navigation'
 import { Person, WithContext } from 'schema-dts'
+import { buildAlternates, absoluteUrl } from '@/lib/seo/alternates'
 
 function generateJsonLd(lang: Locale): WithContext<Person> {
   const isFr = lang === 'fr'
@@ -43,13 +44,24 @@ function generateJsonLd(lang: Locale): WithContext<Person> {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Locale }>
+  params: { lang: Locale }
 }): Promise<Metadata> {
-  const { lang } = await params
-  const content = (await getContentBySlug(lang, ABOUT)) as
-    | EnhancedItem<typeof ABOUT>
-    | undefined
-  return (content?.meta ?? {}) as Metadata
+  const { lang } = params
+  const content = getContentBySlug(lang, 'about')
+  if (!content?.meta) return {}
+
+  const pathname = `/${lang}/about`
+  const base = 'https://floriansahbi.dev'
+
+  return {
+    ...(content.meta as Metadata),
+    metadataBase: new URL(base),
+    alternates: buildAlternates(lang, pathname),
+    openGraph: {
+      ...(content.meta.openGraph ?? {}),
+      url: absoluteUrl(pathname),
+    },
+  }
 }
 
 export async function generateStaticParams() {

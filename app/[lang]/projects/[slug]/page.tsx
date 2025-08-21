@@ -16,6 +16,7 @@ import {
   Person,
 } from 'schema-dts'
 import { notFound } from 'next/navigation'
+import { buildAlternates, absoluteUrl } from '@/lib/seo/alternates'
 
 function generateJsonLd(
   lang: Locale,
@@ -70,14 +71,27 @@ export function generateStaticParams(): Array<{ lang: Locale; slug: string }> {
   return getStaticParams(USE_CASES)
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: { lang: Locale; slug: string }
-}): Metadata {
+}): Promise<Metadata> {
   const { lang, slug } = params
   const content = getContentBySlug(lang, USE_CASES, slug)
-  return (content?.meta ?? {}) as Metadata
+  if (!content?.meta) return {}
+
+  const base = 'https://floriansahbi.dev'
+  const pathname = `/${lang}/projects/${slug}`
+
+  return {
+    ...(content.meta as Metadata),
+    metadataBase: new URL(base),
+    alternates: buildAlternates(lang, pathname),
+    openGraph: {
+      ...(content.meta.openGraph ?? {}),
+      url: absoluteUrl(pathname),
+    },
+  }
 }
 
 export default function ProjectPage({

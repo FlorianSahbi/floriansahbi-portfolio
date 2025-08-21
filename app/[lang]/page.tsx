@@ -4,6 +4,7 @@ import HomeClient from './page.client'
 import { notFound } from 'next/navigation'
 import { WithContext, Person } from 'schema-dts'
 import { HOME, Locale } from '@/lib/content/contentMap'
+import { absoluteUrl, buildAlternates } from '@/lib/seo/alternates'
 
 function generateJsonLd(lang: Locale): WithContext<Person> {
   const isFr = lang === 'fr'
@@ -45,10 +46,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = params
   const content = getContentBySlug(lang, HOME)
-  if (!content) {
-    return {}
+  if (!content?.meta) return {}
+
+  const pathname = `/${lang}`
+
+  return {
+    ...(content.meta as Metadata),
+    metadataBase: new URL('https://floriansahbi.dev'),
+    alternates: buildAlternates(lang, pathname),
+    openGraph: {
+      ...(content.meta.openGraph ?? {}),
+      url: absoluteUrl(pathname),
+    },
   }
-  return content.meta as Metadata
 }
 
 export default function HomePage({ params }: { params: { lang: Locale } }) {

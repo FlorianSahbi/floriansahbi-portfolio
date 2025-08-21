@@ -14,6 +14,46 @@ const Work = defineNestedType(() => ({
   },
 }))
 
+const Study = defineNestedType(() => ({
+  name: 'Study',
+  fields: {
+    title: { type: 'string', required: true },
+    start: { type: 'string', required: true },
+    end: { type: 'string', required: true },
+    localisation: { type: 'string', required: true },
+    description: { type: 'string', required: false },
+    details: { type: 'list', of: { type: 'string' }, required: false },
+  },
+}))
+
+const TravelItem = defineNestedType(() => ({
+  name: 'TravelItem',
+  fields: {
+    title: { type: 'string', required: true },
+    start: { type: 'string', required: true },
+    end: { type: 'string', required: true },
+    localisation: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    details: { type: 'list', of: { type: 'string' }, required: false },
+  },
+}))
+
+const SkillGroup = defineNestedType(() => ({
+  name: 'SkillGroup',
+  fields: {
+    title: { type: 'string', required: true },
+    details: { type: 'list', of: { type: 'string' }, required: true },
+  },
+}))
+
+const Hobby = defineNestedType(() => ({
+  name: 'Hobby',
+  fields: {
+    title: { type: 'string', required: true },
+    details: { type: 'list', of: { type: 'string' }, required: true },
+  },
+}))
+
 const WorksSection = defineNestedType(() => ({
   name: 'WorksSection',
   fields: {
@@ -26,7 +66,7 @@ const StudiesSection = defineNestedType(() => ({
   name: 'StudiesSection',
   fields: {
     title: { type: 'string', required: true },
-    experiences: { type: 'list', of: Work, required: true },
+    experiences: { type: 'list', of: Study, required: true },
   },
 }))
 
@@ -34,7 +74,7 @@ const TravelSection = defineNestedType(() => ({
   name: 'TravelSection',
   fields: {
     title: { type: 'string', required: true },
-    experiences: { type: 'list', of: Work, required: true },
+    experiences: { type: 'list', of: TravelItem, required: true },
   },
 }))
 
@@ -42,7 +82,7 @@ const SkillsSection = defineNestedType(() => ({
   name: 'SkillsSection',
   fields: {
     title: { type: 'string', required: true },
-    experiences: { type: 'list', of: Work, required: true },
+    experiences: { type: 'list', of: SkillGroup, required: true },
   },
 }))
 
@@ -50,7 +90,7 @@ const HobbiesSection = defineNestedType(() => ({
   name: 'HobbiesSection',
   fields: {
     title: { type: 'string', required: true },
-    experiences: { type: 'list', of: Work, required: true },
+    experiences: { type: 'list', of: Hobby, required: true },
   },
 }))
 

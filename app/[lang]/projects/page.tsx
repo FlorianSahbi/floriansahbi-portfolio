@@ -12,6 +12,7 @@ import {
   NavigationItem,
 } from '@/lib/content/service'
 import ProjectsClientPage from './page.client'
+import { buildAlternates, absoluteUrl } from '@/lib/seo/alternates'
 
 type UseCaseItem = EnhancedItem<typeof USE_CASES>
 type UseCaseWithHref = UseCaseItem & { href: string }
@@ -20,16 +21,30 @@ export function generateStaticParams(): Array<{ lang: Locale }> {
   return getStaticParams(PROJECT).map(({ lang }) => ({ lang }))
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: { lang: Locale }
-}): Metadata {
+}): Promise<Metadata> {
   const { lang } = params
   const page = getContentBySlug(lang, PROJECT) as
     | EnhancedItem<typeof PROJECT>
     | undefined
-  return (page?.meta ?? {}) as Metadata
+
+  if (!page?.meta) return {}
+
+  const pathname = `/${lang}/projects`
+  const base = 'https://floriansahbi.dev'
+
+  return {
+    ...(page.meta as Metadata),
+    metadataBase: new URL(base),
+    alternates: buildAlternates(lang, pathname),
+    openGraph: {
+      ...(page.meta.openGraph ?? {}),
+      url: absoluteUrl(pathname),
+    },
+  }
 }
 
 export default function ProjectsPage({ params }: { params: { lang: Locale } }) {
